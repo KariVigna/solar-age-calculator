@@ -1,15 +1,16 @@
-import calculateAge from '../src/age.js'
+import GalacticCalculator from './../src/age.js'
 
 describe ("calculateAge", () => {
+    let galacticCalculator;
 
     beforeEach(() => {
-        let calculateAge = new calculateAge;
-        const earthAge = 10
+        galacticCalculator = new GalacticCalculator(10);
     })
-    test('should correctly return solar ages' => {
-        expect(calculateAge(earthAge[0])).toBe(41.66);
-        expect(calculateAge(earthAge[1])).toBe(16.12);
-        expect(calculateAge(earthAge[2])).toBe(5.31);
-        expect(calculateAge(earthAge[3])).toBe(0.84);
+    test('should correctly return solar ages', () => {
+        
+        expect(galacticCalculator.calculateAge()["mercury"]).toBe("41.67");
+        expect(galacticCalculator.calculateAge()["venus"]).toBe("16.13");
+        expect(galacticCalculator.calculateAge()["mars"]).toBe("5.32");
+        expect(galacticCalculator.calculateAge()["jupiter"]).toBe("0.84");
     })
 })
