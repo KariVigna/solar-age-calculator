@@ -13,4 +13,13 @@ describe ("calculateAge", () => {
         expect(galacticCalculator.calculateAge()["mars"]).toBe("5.32");
         expect(galacticCalculator.calculateAge()["jupiter"]).toBe("0.84");
     })
+
+    test('should correctly return distance from future age', () => {
+        
+        expect(galacticCalculator.yearsPastBirthday(2)["mercury"]).toBe("");
+        expect(galacticCalculator.yearsPastBirthday(2)["venus"]).toBe("");
+        expect(galacticCalculator.yearsPastBirthday(2)["mars"]).toBe("");
+        expect(galacticCalculator.yearsPastBirthday(2)["jupiter"]).toBe("");
+    })
+
 })
