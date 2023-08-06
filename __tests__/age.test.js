@@ -3,7 +3,7 @@ import GalacticCalculator from './../src/age.js'
 describe ("calculateAge", () => {
     let galacticCalculator;
 
-    beforeEach(() => {
+     beforeEach(() => {
         galacticCalculator = new GalacticCalculator(10);
     })
     test('should correctly return solar ages', () => {
@@ -13,13 +13,36 @@ describe ("calculateAge", () => {
         expect(galacticCalculator.calculateAge()["mars"]).toBe("5.32");
         expect(galacticCalculator.calculateAge()["jupiter"]).toBe("0.84");
     })
+})
 
+describe ("earthYearsSincePastBday", () => {
+    let earthYearsSincePastBday;
+    let galacticCalculator;
+
+    beforeEach(() => {
+        earthYearsSincePastBday = earthYearsSincePastBday(2);
+    })
     test('should correctly return distance from future age', () => {
         
-        expect(galacticCalculator.yearsPastBirthday(2)["mercury"]).toBe("");
-        expect(galacticCalculator.yearsPastBirthday(2)["venus"]).toBe("");
-        expect(galacticCalculator.yearsPastBirthday(2)["mars"]).toBe("");
-        expect(galacticCalculator.yearsPastBirthday(2)["jupiter"]).toBe("");
+        expect(galacticCalculator.earthYearsSincePastBday()["mercury"]).toBe("8.33");
+        expect(galacticCalculator.earthYearsSincePastBday()["venus"]).toBe("3.23");
+        expect(galacticCalculator.earthYearsSincePastBday()["mars"]).toBe("1.06");
+        expect(galacticCalculator.earthYearsSincePastBday()["jupiter"]).toBe("0.17");
     })
+})
 
+describe ("earthYearsUntilABday", () => {
+    let earthYearsUntilABday;
+    let galacticCalculator;
+
+    beforeEach(() => {
+        earthYearsUntilABday = earthYearsUntilABday(2);
+    })
+    test('should correctly return distance from future age', () => {
+        
+        expect(galacticCalculator.earthYearsUntilABday()["mercury"]).toBe("8.33");
+        expect(galacticCalculator.earthYearsUntilABday()["venus"]).toBe("3.23");
+        expect(galacticCalculator.earthYearsUntilABday()["mars"]).toBe("1.06");
+        expect(galacticCalculator.earthYearsUntilABday()["jupiter"]).toBe("0.17");
+    })
 })
