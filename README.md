@@ -18,8 +18,9 @@ _This takes a users inputted age and returns their "age" on four different plane
 
 * _Clone this repository to desktop_
 * _Navigate this projects top level directory._
-* __
-* __
+* __ `$ npm install` - to install all dependencies.a
+* __  `$ npm run build`
+* __  `$ npm run test` - to run tests.
 
 ## Known Bugs
 

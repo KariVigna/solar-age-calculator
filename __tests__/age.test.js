@@ -7,7 +7,7 @@ describe ("calculateAge", () => {
         galacticCalculator = new GalacticCalculator(10);
     })
     test('should correctly return solar ages', () => {
-        
+       
         expect(galacticCalculator.calculateAge()["mercury"]).toBe("41.67");
         expect(galacticCalculator.calculateAge()["venus"]).toBe("16.13");
         expect(galacticCalculator.calculateAge()["mars"]).toBe("5.32");
@@ -15,34 +15,32 @@ describe ("calculateAge", () => {
     })
 })
 
-describe ("earthYearsSincePastBday", () => {
-    let earthYearsSincePastBday;
+describe ("solarYearsSince", () => {
     let galacticCalculator;
 
     beforeEach(() => {
-        earthYearsSincePastBday = earthYearsSincePastBday(2);
+        galacticCalculator = new GalacticCalculator(10);
     })
     test('should correctly return distance from future age', () => {
         
-        expect(galacticCalculator.earthYearsSincePastBday()["mercury"]).toBe("8.33");
-        expect(galacticCalculator.earthYearsSincePastBday()["venus"]).toBe("3.23");
-        expect(galacticCalculator.earthYearsSincePastBday()["mars"]).toBe("1.06");
-        expect(galacticCalculator.earthYearsSincePastBday()["jupiter"]).toBe("0.17");
+        expect(galacticCalculator.solarYearsSince(8)["mercury"]).toBe("8.33");
+        expect(galacticCalculator.solarYearsSince(8)["venus"]).toBe("3.23");
+        expect(galacticCalculator.solarYearsSince(8)["mars"]).toBe("1.06");
+        expect(galacticCalculator.solarYearsSince(8)["jupiter"]).toBe("0.17");
     })
 })
 
-describe ("earthYearsUntilABday", () => {
-    let earthYearsUntilABday;
+describe ("solarYearsUntil", () => {
     let galacticCalculator;
 
     beforeEach(() => {
-        earthYearsUntilABday = earthYearsUntilABday(2);
+         galacticCalculator = new GalacticCalculator(10);
     })
     test('should correctly return distance from future age', () => {
         
-        expect(galacticCalculator.earthYearsUntilABday()["mercury"]).toBe("8.33");
-        expect(galacticCalculator.earthYearsUntilABday()["venus"]).toBe("3.23");
-        expect(galacticCalculator.earthYearsUntilABday()["mars"]).toBe("1.06");
-        expect(galacticCalculator.earthYearsUntilABday()["jupiter"]).toBe("0.17");
+        expect(galacticCalculator.solarYearsUntil(12)["mercury"]).toBe("8.33");
+        expect(galacticCalculator.solarYearsUntil(12)["venus"]).toBe("3.23");
+        expect(galacticCalculator.solarYearsUntil(12)["mars"]).toBe("1.06");
+        expect(galacticCalculator.solarYearsUntil(12)["jupiter"]).toBe("0.17");
     })
 })

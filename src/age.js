@@ -7,27 +7,29 @@ export default class GalacticCalculator {
       this.mercuryAge = undefined;
     }
       calculateAge() {
-      this.mercuryAge = this.earthAge/.24;
-      this.venusAge = this.earthAge/.62;
-      this.marsAge = this.earthAge/1.88;
-      this.jupiterAge = this.earthAge/11.86;
-      let solarAges = {"mercury": this.mercuryAge.toFixed(2), "venus": this.venusAge.toFixed(2), "mars": this.marsAge.toFixed(2), "jupiter": this.jupiterAge.toFixed(2)};
+      this.mercuryAge = (this.earthAge/.24).toFixed(2);
+      this.venusAge = (this.earthAge/.62).toFixed(2);
+      this.marsAge = (this.earthAge/1.88).toFixed(2);
+      this.jupiterAge = (this.earthAge/11.86).toFixed(2);
+      let solarAges = {"mercury": this.mercuryAge, "venus": this.venusAge, "mars": this.marsAge, "jupiter": this.jupiterAge};
       return solarAges
     }
-      solarYearsSince(earthYearsSincePastBday){
-      this.mercuryAge = earthYearsSincePastBday/.24;
-      this.venusAge = earthYearsSincePastBday/.62;
-      this.marsAge = earthYearsSincePastBday/1.88;
-      this.jupiterAge = earthYearsSincePastBday/11.86;
-      let solarTimePassed = {"mercury": earthYearsSincePastBday/.24.toFixed(2), "venus": earthYearsSincePastBday/.62.toFixed(2), "mars": earthYearsSincePastBday/1.88.toFixed(2), "jupiter": earthYearsSincePastBday/1.88.toFixed(2)};
+      solarYearsSince(pastAge){
+      const earthYearsSincePastBday = this.earthAge - pastAge;
+      const mercuryYearsSincePastBday = (earthYearsSincePastBday/.24).toFixed(2);
+      const venusYearsSincePastBday = (earthYearsSincePastBday/.62).toFixed(2);
+      const marsYearsSincePastBday = (earthYearsSincePastBday/1.88).toFixed(2);
+      const jupiterYearsSincePastBday = (earthYearsSincePastBday/11.86).toFixed(2);
+      let solarTimePassed = {"mercury": mercuryYearsSincePastBday, "venus": venusYearsSincePastBday, "mars": marsYearsSincePastBday, "jupiter": jupiterYearsSincePastBday};
       return solarTimePassed
       }
-      solarYearsUntil(earthYearsUntilABday){
-        this.mercuryAge = earthYearsUntilABday/.24;
-        this.venusAge = earthYearsUntilABday/.62;
-        this.marsAge = earthYearsUntilABday/1.88;
-        this.jupiterAge = earthYearsUntilABday/11.86;
-        let solarTimePassed = {"mercury": earthYearsUntilABday/.24.toFixed(2), "venus": earthYearsUntilABday/.62.toFixed(2), "mars": earthYearsUntilABday/1.88.toFixed(2), "jupiter": earthYearsUntilABday/1.88.toFixed(2)};
+      solarYearsUntil(futureAge){
+        const earthYearsUntilABday = futureAge - this.earthAge
+        const mercuryYearsUntilABday = (earthYearsUntilABday/.24).toFixed(2);
+        const venusYearsUntilABday = (earthYearsUntilABday/.62).toFixed(2);
+        const marsYearsUntilABday = (earthYearsUntilABday/1.88).toFixed(2);
+        const jupiterYearsUntilABday = (earthYearsUntilABday/11.86).toFixed(2);
+        let solarTimePassed = {"mercury": mercuryYearsUntilABday, "venus": venusYearsUntilABday, "mars": marsYearsUntilABday, "jupiter": jupiterYearsUntilABday};
         return solarTimePassed
         }
     }
